@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="content-wrapper">
-		<section class="description">
+		<section class="description no-print">
 			<Content />
 		</section>
 
@@ -190,39 +190,90 @@
 
 	/* Print Styles */
 	.print-header {
-		margin-bottom: 2rem;
-		border-bottom: 2px solid black;
-		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid black;
+		padding-bottom: 0.5rem;
 	}
 
 	.print-header h1 {
-		font-size: 1.8rem;
-		margin-bottom: 0.5rem;
+		font-size: 1.5rem;
+		margin-bottom: 0.25rem;
 	}
 
 	.print-meta {
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		color: #666;
 		margin: 0;
 	}
 	
 	@media print {
+		@page {
+			margin: 0.5in;
+			size: auto;
+		}
+
+		body {
+			font-size: 11pt;
+			line-height: 1.3;
+		}
+
+		.episode-detail {
+			padding-bottom: 0;
+		}
+
+		.content-wrapper {
+			gap: 0;
+			display: block;
+		}
+
 		.recipe-card {
 			border: none;
 			padding: 0;
 			background: transparent;
+			margin: 0;
+		}
+
+		.recipe-header {
+			display: none; /* Hide "Recipe" H2 and print button */
 		}
 
 		.recipe-content {
-			display: block; /* Stack on print for better width usage */
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 2rem;
+			margin-top: 1rem;
 		}
 
-		.ingredients, .directions {
-			margin-bottom: 2rem;
+		.ingredients h3, .directions h3 {
+			font-size: 1.1rem;
+			margin-top: 0;
+			margin-bottom: 0.5rem;
+			border-bottom: 1px solid #eee;
+			padding-bottom: 0.25rem;
+		}
+
+		.ingredients ul {
+			padding-left: 1rem;
+			margin-bottom: 0;
+		}
+
+		.ingredients li {
+			margin-bottom: 0.25rem;
+		}
+
+		.directions ol {
+			padding-left: 1rem;
+			margin-bottom: 0;
 		}
 		
-		.ingredients ul, .directions ol {
+		.directions li {
+			margin-bottom: 0.75rem;
 			page-break-inside: avoid;
+		}
+
+		/* If ingredients list is very long, ensuring it doesn't waste space */
+		.ingredients {
+			font-size: 0.95em;
 		}
 	}
 </style>
