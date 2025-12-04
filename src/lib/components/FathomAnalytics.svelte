@@ -17,26 +17,30 @@
 			auto: false
 		});
 
+		const initialPath = window.location.pathname + window.location.search;
+		previousPath = initialPath;
 		isLoaded = true;
-		previousPath = window.location.pathname + window.location.search;
 
 		// Track initial pageview
 		trackPageview({
-			url: previousPath,
+			url: initialPath,
 			referrer: document.referrer
 		});
 	});
 
 	// Track pageviews on route changes (but not on initial load)
-	$: if (browser && isLoaded && $page.url) {
+	$effect(() => {
+		if (!browser || !isLoaded || !$page.url) return;
+		
 		const currentPath = $page.url.pathname + $page.url.search;
-		if (currentPath !== previousPath) {
+		// Only track if path actually changed (avoid double-tracking initial load)
+		if (currentPath !== previousPath && previousPath !== '') {
 			previousPath = currentPath;
 			trackPageview({
 				url: currentPath,
 				referrer: document.referrer
 			});
 		}
-	}
+	});
 </script>
 
