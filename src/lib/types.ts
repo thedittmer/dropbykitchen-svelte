@@ -12,7 +12,7 @@ export interface Episode {
 	location: string;
 	tags: string[];
 	youtubeId: string;
-	description: string;
+	excerpt: string;
 	recipe: Recipe;
 }
 
@@ -20,4 +20,3 @@ export interface Episode {
 export interface EpisodeMetadata extends Episode {
 	[key: string]: any;
 }
-

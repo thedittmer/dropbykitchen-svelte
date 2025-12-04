@@ -7,7 +7,7 @@ guest: "Mitch, owner of Indian Springs Brewing Company"
 location: "Mitch’s kitchen, Neosho, Missouri"
 tags: ["chili", "beef", "beer pairing", "Indian Springs Brewing", "comfort food", "cast iron"]
 youtubeId: "FIRST_EPISODE_ID"
-description: "We drop by Mitch’s house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about his journey from Methodist minister to brewery owner, his son who travels the world as a chef, and the local beer scene."
+excerpt: "I drop by Mitch’s house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef."
 recipe:
   ingredients:
     - "2 pounds ground beef"
@@ -36,5 +36,6 @@ recipe:
     - "Ladle chili into bowls and top with shredded cheese, sour cream, onions/green onions, jalapeños, and hot sauce as desired. Serve with crackers or cornbread and Mitch’s beer on the side."
 ---
 
-We also start to explain what Drop‑By Kitchen is all about: visiting real kitchens, cooking everyday recipes, and having real conversations around the stove.
+I drop by Mitch's house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef.
 
+We also start to explain what Drop‑By Kitchen is all about: visiting real kitchens, cooking everyday recipes, and having real conversations around the stove.

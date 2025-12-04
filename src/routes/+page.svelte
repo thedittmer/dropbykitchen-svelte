@@ -10,7 +10,7 @@
 		const searchLower = search.toLowerCase();
 		const matchesSearch = 
 			episode.title.toLowerCase().includes(searchLower) ||
-			episode.description.toLowerCase().includes(searchLower) ||
+			episode.excerpt.toLowerCase().includes(searchLower) ||
 			episode.guest.toLowerCase().includes(searchLower) ||
 			episode.tags.some(tag => tag.toLowerCase().includes(searchLower));
 		
@@ -58,7 +58,7 @@
 			</div>
 			<h2>{episode.title}</h2>
 			<p class="guest">with {episode.guest}</p>
-			<p class="description">{episode.description}</p>
+			<p class="description">{episode.excerpt}</p>
 			<div class="tags">
 				{#each episode.tags.slice(0, 3) as tag}
 					<span class="tag">{tag}</span>
