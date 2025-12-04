@@ -96,7 +96,6 @@
 			<!-- Print-only header -->
 			<div class="print-only print-header">
 				<h1>{episode.title}</h1>
-				<p>{episode.excerpt}</p>
 				<p class="print-meta">From DropByKitchen.com • Episode {episode.episodeNumber}</p>
 			</div>
 
