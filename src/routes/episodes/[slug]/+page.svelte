@@ -14,6 +14,54 @@
 
 <svelte:head>
 	<title>{episode.title} | Drop-By Kitchen</title>
+	<meta name="description" content={episode.excerpt} />
+	<meta name="keywords" content={episode.tags.join(', ')} />
+	<meta property="og:title" content={episode.title} />
+	<meta property="og:description" content={episode.excerpt} />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content={`https://dropbykitchen.com/episodes/${episode.slug}`} />
+	<meta property="og:image" content={`https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href={`https://dropbykitchen.com/episodes/${episode.slug}`} />
+	
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Recipe",
+			"name": "{episode.title}",
+			"image": [
+				"https://img.youtube.com/vi/{episode.youtubeId}/maxresdefault.jpg"
+			],
+			"author": {
+				"@type": "Person",
+				"name": "Jason Dittmer"
+			},
+			"datePublished": "{episode.publishedDate}",
+			"description": "{episode.excerpt}",
+			"recipeIngredient": [
+				{#each episode.recipe.ingredients as ingredient, i}
+					"{ingredient}"{i < episode.recipe.ingredients.length - 1 ? ',' : ''}
+				{/each}
+			],
+			"recipeInstructions": [
+				{#each episode.recipe.directions as step, i}
+					{
+						"@type": "HowToStep",
+						"text": "{step}"
+					}{i < episode.recipe.directions.length - 1 ? ',' : ''}
+				{/each}
+			],
+			"video": {
+				"@type": "VideoObject",
+				"name": "{episode.title}",
+				"description": "{episode.excerpt}",
+				"thumbnailUrl": "https://img.youtube.com/vi/{episode.youtubeId}/maxresdefault.jpg",
+				"uploadDate": "{episode.publishedDate}",
+				"contentUrl": "https://www.youtube.com/watch?v={episode.youtubeId}",
+				"embedUrl": "https://www.youtube.com/embed/{episode.youtubeId}"
+			}
+		}
+	</script>
 </svelte:head>
 
 <article class="episode-detail">
