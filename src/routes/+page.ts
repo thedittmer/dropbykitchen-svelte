@@ -2,7 +2,6 @@ import type { EpisodeMetadata } from '$lib/types';
 
 export const load = async () => {
 	// Import markdown files from the content directory
-	// Using same pattern depth as sitemap/rss files for consistency
 	const modules = import.meta.glob('../../../content/episodes/*.md');
 	
 	const episodes = await Promise.all(
