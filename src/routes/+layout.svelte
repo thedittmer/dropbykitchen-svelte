@@ -1,8 +1,11 @@
 <script lang="ts">
 	import '../app.css';
+	import FathomAnalytics from '$lib/components/FathomAnalytics.svelte';
 	
 	let { children } = $props();
 </script>
+
+<FathomAnalytics />
 
 <div class="container">
 	<header class="no-print">
