@@ -1,15 +1,15 @@
 import type { EpisodeMetadata } from '$lib/types';
 
 export const load = async () => {
-	// Import markdown files from the content directory
-	const modules = import.meta.glob('../../../content/episodes/*.md');
+	const modules = import.meta.glob<{ metadata: EpisodeMetadata }>('../../../content/episodes/*.md');
 	
 	const episodes = await Promise.all(
 		Object.entries(modules).map(async ([path, resolver]) => {
-			const episode = await resolver() as { metadata: EpisodeMetadata };
+			const module = await resolver();
+			const slug = path.split('/').pop()?.slice(0, -3) ?? '';
 			return {
-				...episode.metadata,
-				slug: path.split('/').pop()?.slice(0, -3) ?? '' // extract slug from filename
+				...module.metadata,
+				slug
 			};
 		})
 	);
