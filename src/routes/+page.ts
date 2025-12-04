@@ -1,7 +1,9 @@
 import type { EpisodeMetadata } from '$lib/types';
 
 export const load = async () => {
-	const modules = import.meta.glob('/content/episodes/*.md');
+	// Import markdown files from the content directory
+	// Note: The path is relative to this file
+	const modules = import.meta.glob('../../content/episodes/*.md');
 	
 	const episodes = await Promise.all(
 		Object.entries(modules).map(async ([path, resolver]) => {

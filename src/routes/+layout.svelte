@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
 	
 	let { children } = $props();
 </script>
@@ -9,9 +8,6 @@
 	<header class="no-print">
 		<nav>
 			<a href="/" class="logo">Drop-By Kitchen</a>
-			<div class="nav-links">
-				<a href="/episodes" class:active={$page.url.pathname.startsWith('/episodes')}>Episodes</a>
-			</div>
 		</nav>
 	</header>
 
@@ -23,10 +19,3 @@
 		<p>&copy; {new Date().getFullYear()} Drop-By Kitchen. All rights reserved.</p>
 	</footer>
 </div>
-
-<style>
-	.active {
-		text-decoration: underline;
-		color: var(--color-theme-1) !important;
-	}
-</style>
