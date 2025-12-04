@@ -1,13 +1,13 @@
 ---
-title: "Drop-By Kitchen: Chili with Mitch"
+title: "Simple Beef & Beer Chili"
 slug: "chili-with-mitch"
 episodeNumber: 1
 publishedDate: "2025-12-02"
 guest: "Mitch, owner of Indian Springs Brewing Company"
-location: "Mitch’s kitchen, Neosho, Missouri"
+location: "Mitch's kitchen, Neosho, Missouri"
 tags: ["chili", "beef", "beer pairing", "Indian Springs Brewing", "comfort food", "cast iron"]
-youtubeId: "FIRST_EPISODE_ID"
-excerpt: "I drop by Mitch’s house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef."
+youtubeId: "w6ZzJFyzyJw"
+excerpt: "I drop by Mitch's house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef."
 recipe:
   ingredients:
     - "2 pounds ground beef"
@@ -33,7 +33,7 @@ recipe:
     - "Pour in the diced tomatoes (with their juice), tomato sauce, and about 1 cup beef broth or water. If using beer in the chili, add about 1/2 bottle (6 oz) now and stir to combine."
     - "Stir in the drained and rinsed beans, if using. If the chili looks very thick, add a bit more broth or water so it can simmer without sticking."
     - "Bring to a gentle boil, then reduce heat to low. Simmer uncovered 30–45 minutes, stirring occasionally. Add more liquid if needed and adjust seasoning to taste."
-    - "Ladle chili into bowls and top with shredded cheese, sour cream, onions/green onions, jalapeños, and hot sauce as desired. Serve with crackers or cornbread and Mitch’s beer on the side."
+    - "Ladle chili into bowls and top with shredded cheese, sour cream, onions/green onions, jalapeños, and hot sauce as desired. Serve with crackers or cornbread and Mitch's beer on the side."
 ---
 
 I drop by Mitch's house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef.
