@@ -96,10 +96,53 @@ nav {
 	text-decoration: none;
 }
 
-.nav-links a {
-	margin-left: 1rem;
-	font-weight: 500;
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.youtube-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: transparent;
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
 	color: var(--color-text);
+	font-weight: 500;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.youtube-btn:hover {
+	background: var(--color-bg-2);
+	border-color: var(--color-text-light);
+	text-decoration: none;
+}
+
+.youtube-btn:active {
+	scale: 0.98;
+}
+
+.youtube-icon {
+	width: 1.25rem;
+	height: 1.25rem;
+	flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+	.youtube-btn span {
+		display: none;
+	}
+	
+	.youtube-btn {
+		padding: 0.5rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		justify-content: center;
+	}
 }
 
 input,

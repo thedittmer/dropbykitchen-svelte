@@ -50,42 +50,40 @@
 	}
 </script>
 
-<button onclick={toggleTheme} class="theme-toggle" title="Toggle theme (current: {getLabel()})">
+<button onclick={toggleTheme} class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
 	<span class="icon">{getIcon()}</span>
-	<span class="label">{getLabel()}</span>
 </button>
 
 <style>
 	.theme-toggle {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
-		gap: 0.5rem;
-		padding: 0.5rem 0.75rem;
-		background: var(--color-bg-2);
+		justify-content: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
+		background: transparent;
 		border: 1px solid var(--color-border);
-		border-radius: 4px;
+		border-radius: 6px;
 		color: var(--color-text);
-		font-size: 0.875rem;
-		transition: background-color 0.2s, border-color 0.2s;
+		transition: all 0.2s ease;
 	}
 
 	.theme-toggle:hover {
-		background: var(--color-bg-1);
+		background: var(--color-bg-2);
+		border-color: var(--color-text-light);
+	}
+
+	.theme-toggle:active {
+		scale: 0.95;
 	}
 
 	.icon {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 		line-height: 1;
-	}
-
-	.label {
-		font-weight: 500;
-	}
-
-	@media (max-width: 640px) {
-		.label {
-			display: none;
-		}
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>
 
