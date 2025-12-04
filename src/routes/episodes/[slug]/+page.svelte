@@ -10,6 +10,36 @@
 	function handlePrint() {
 		window.print();
 	}
+
+	// Generate JSON-LD schema as a properly stringified JSON string
+	let jsonLdScript = $derived(JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Recipe",
+		"name": episode.title,
+		"image": [
+			`https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`
+		],
+		"author": {
+			"@type": "Person",
+			"name": "Jason Dittmer"
+		},
+		"datePublished": episode.publishedDate,
+		"description": episode.excerpt,
+		"recipeIngredient": episode.recipe.ingredients,
+		"recipeInstructions": episode.recipe.directions.map((step: string) => ({
+			"@type": "HowToStep",
+			"text": step
+		})),
+		"video": {
+			"@type": "VideoObject",
+			"name": episode.title,
+			"description": episode.excerpt,
+			"thumbnailUrl": `https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`,
+			"uploadDate": episode.publishedDate,
+			"contentUrl": `https://www.youtube.com/watch?v=${episode.youtubeId}`,
+			"embedUrl": `https://www.youtube.com/embed/${episode.youtubeId}`
+		}
+	}));
 </script>
 
 <svelte:head>
@@ -24,44 +54,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="canonical" href={`https://dropbykitchen.com/episodes/${episode.slug}`} />
 	
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Recipe",
-			"name": "{episode.title}",
-			"image": [
-				"https://img.youtube.com/vi/{episode.youtubeId}/maxresdefault.jpg"
-			],
-			"author": {
-				"@type": "Person",
-				"name": "Jason Dittmer"
-			},
-			"datePublished": "{episode.publishedDate}",
-			"description": "{episode.excerpt}",
-			"recipeIngredient": [
-				{#each episode.recipe.ingredients as ingredient, i}
-					"{ingredient}"{i < episode.recipe.ingredients.length - 1 ? ',' : ''}
-				{/each}
-			],
-			"recipeInstructions": [
-				{#each episode.recipe.directions as step, i}
-					{
-						"@type": "HowToStep",
-						"text": "{step}"
-					}{i < episode.recipe.directions.length - 1 ? ',' : ''}
-				{/each}
-			],
-			"video": {
-				"@type": "VideoObject",
-				"name": "{episode.title}",
-				"description": "{episode.excerpt}",
-				"thumbnailUrl": "https://img.youtube.com/vi/{episode.youtubeId}/maxresdefault.jpg",
-				"uploadDate": "{episode.publishedDate}",
-				"contentUrl": "https://www.youtube.com/watch?v={episode.youtubeId}",
-				"embedUrl": "https://www.youtube.com/embed/{episode.youtubeId}"
-			}
-		}
-	</script>
+	{@html `<script type="application/ld+json">${jsonLdScript}</script>`}
 </svelte:head>
 
 <article class="episode-detail">
@@ -325,4 +318,3 @@
 		}
 	}
 </style>
-
