@@ -5,7 +5,7 @@ const siteTitle = 'Drop-By Kitchen';
 const siteDescription = 'Visiting real kitchens, cooking everyday recipes, and having real conversations around the stove.';
 
 export async function GET() {
-	const modules = import.meta.glob('../../../content/episodes/*.md');
+	const modules = import.meta.glob('/content/episodes/*.md');
 	
 	const episodes = await Promise.all(
 		Object.entries(modules).map(async ([path, resolver]) => {

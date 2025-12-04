@@ -1,7 +1,7 @@
 import type { EpisodeMetadata } from '$lib/types';
 
 export const load = async () => {
-	const modules = import.meta.glob<{ metadata: EpisodeMetadata }>('../../../content/episodes/*.md');
+	const modules = import.meta.glob<{ metadata: EpisodeMetadata }>('/content/episodes/*.md');
 	
 	const episodes = await Promise.all(
 		Object.entries(modules).map(async ([path, resolver]) => {
@@ -13,7 +13,7 @@ export const load = async () => {
 			};
 		})
 	);
-
+	
 	return {
 		episodes: episodes.sort((a, b) => b.episodeNumber - a.episodeNumber)
 	};

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import FathomAnalytics from '$lib/components/FathomAnalytics.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	
 	let { children } = $props();
 </script>
@@ -13,6 +14,7 @@
 			<a href="/" class="logo">Drop-By Kitchen</a>
 			<div class="nav-links">
 				<a href="https://www.youtube.com/@DropByKitchen" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+				<ThemeToggle />
 			</div>
 		</nav>
 	</header>

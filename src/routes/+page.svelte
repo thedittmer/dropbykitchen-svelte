@@ -2,9 +2,6 @@
   import type { EpisodeMetadata } from "$lib/types";
 
   let { data } = $props();
-  
-  console.log('Page data:', data);
-  console.log('Episodes:', data.episodes);
 
   let search = $state("");
   let selectedTag = $state("");

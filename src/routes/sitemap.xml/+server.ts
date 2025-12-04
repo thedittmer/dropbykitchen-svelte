@@ -3,7 +3,7 @@ import type { EpisodeMetadata } from '$lib/types';
 const siteUrl = 'https://dropbykitchen.com';
 
 export async function GET() {
-	const modules = import.meta.glob('../../../content/episodes/*.md');
+	const modules = import.meta.glob('/content/episodes/*.md');
 	
 	const episodes = await Promise.all(
 		Object.entries(modules).map(async ([path, resolver]) => {
