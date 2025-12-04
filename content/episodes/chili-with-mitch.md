@@ -8,6 +8,12 @@ location: "Mitch's kitchen, Neosho, Missouri"
 tags: ["chili", "beef", "beer pairing", "Indian Springs Brewing", "comfort food", "cast iron"]
 youtubeId: "w6ZzJFyzyJw"
 excerpt: "I drop by Mitch's house in Neosho to make a simple beef chili that pairs with beer from his brewery, Indian Springs Brewing Company. While the chili simmers, we talk about the local beer scene and his son who travels the world as a chef."
+music:
+  title: "Christmas Mood"
+  artist: "Alex-Productions"
+  sourceUrl: "https://onsound.eu/"
+  license: "Creative Commons / Attribution 3.0 Unported License (CC BY 3.0)"
+  licenseUrl: "https://creativecommons.org/licenses/by/3.0/deed.en_US"
 recipe:
   ingredients:
     - "2 pounds ground beef"

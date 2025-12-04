@@ -121,6 +121,25 @@
 			</div>
 		</section>
 	</div>
+
+	{#if episode.music}
+		<section class="music-credits no-print">
+			<h2>Music</h2>
+			<p>
+				<strong>{episode.music.title}</strong> by {episode.music.artist}
+				{#if episode.music.sourceUrl}
+					| <a href={episode.music.sourceUrl} target="_blank" rel="noopener noreferrer">Source</a>
+				{/if}
+			</p>
+			<p class="music-license">
+				Music promoted by <a href="https://www.free-stock-music.com" target="_blank" rel="noopener noreferrer">free-stock-music.com</a>
+			</p>
+			<p class="music-license">
+				{episode.music.license} | 
+				<a href={episode.music.licenseUrl} target="_blank" rel="noopener noreferrer">License Details</a>
+			</p>
+		</section>
+	{/if}
 </article>
 
 <style>
@@ -316,5 +335,28 @@
 		.ingredients {
 			font-size: 0.95em;
 		}
+	}
+
+	.music-credits {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--color-border);
+		font-size: 0.9rem;
+		color: var(--color-text-light);
+	}
+
+	.music-credits h2 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+		color: var(--color-text);
+	}
+
+	.music-credits p {
+		margin: 0.5rem 0;
+		line-height: 1.5;
+	}
+
+	.music-license {
+		font-size: 0.85rem;
 	}
 </style>

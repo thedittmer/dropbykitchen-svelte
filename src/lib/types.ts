@@ -3,6 +3,14 @@ export interface Recipe {
 	directions: string[];
 }
 
+export interface MusicCredit {
+	title: string;
+	artist: string;
+	sourceUrl?: string;
+	license: string;
+	licenseUrl: string;
+}
+
 export interface Episode {
 	title: string;
 	slug: string;
@@ -14,6 +22,7 @@ export interface Episode {
 	youtubeId: string;
 	excerpt: string;
 	recipe: Recipe;
+	music?: MusicCredit;
 }
 
 // Type alias for mdsvex layout metadata
